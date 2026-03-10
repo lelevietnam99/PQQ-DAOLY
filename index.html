@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQQ Đạo Lý</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #8b5a2b; /* Tông màu nâu ấm áp, trang nghiêm */
+            --bg-color: #f4f1ea;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --hover-color: #a0522d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            flex-grow: 1;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            border-top-color: var(--hover-color);
+        }
+
+        .category-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .category-card:hover i {
+            color: var(--hover-color);
+        }
+
+        .category-card h2 {
+            font-size: 1.3rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #e8e4d9;
+            padding: 1.5rem 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PQQ Đạo Lý</h1>
+    </header>
+
+    <div class="container">
+        <a href="http://abc.com" class="category-card" target="_blank">
+            <i class="fa-solid fa-book-open"></i>
+            <h2>Đạo Lý Mỗi Ngày</h2>
+        </a>
+
+        <a href="http://abc.com" class="category-card" target="_blank">
+            <i class="fa-solid fa-users"></i>
+            <h2>Tiểu sử 60 vị A La Hán</h2>
+        </a>
+
+        <a href="http://abc.com" class="category-card" target="_blank">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <h2>Các câu chuyện Trích từ Đỉnh Núi Tuyết</h2>
+        </a>
+
+        <a href="http://abc.com" class="category-card" target="_blank">
+            <i class="fa-solid fa-quote-left"></i>
+            <h2>Các trích dẫn từ bài giảng của Sáng Tổ Sư</h2>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PQQ. Trang lưu trữ đạo lý.</p>
+    </footer>
+
+</body>
+</html>
