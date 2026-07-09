@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PQQ Đạo Lý</title>
+    <title>PQQ Đạo Lý - Vũ Trụ</title>
+    <!-- Font Awesome cho Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts cho nét chữ thanh thoát -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #8b5a2b; /* Tông màu nâu ấm áp, trang nghiêm */
-            --bg-color: #f4f1ea;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --hover-color: #a0522d;
+            /* Dải màu vũ trụ: Xanh lam đậm, Tím, Xanh ngọc */
+            --primary-gradient: linear-gradient(135deg, #1a237e, #4a148c, #006064);
+            --bg-color: #050711; /* Màu nền đen sâu */
+            --card-bg: rgba(255, 255, 255, 0.1); /* Kính mờ trắng tinh tế */
+            --text-color: #ecf0f1; /* Trắng xám dễ đọc */
+            --hover-transform: translateY(-10px);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Quicksand', sans-serif;
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -25,80 +28,138 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            /* Cài đặt hình nền vũ trụ bao la */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), /* Lớp phủ mờ tối để dễ đọc chữ */
+                url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1920&auto=format&fit=crop'); /* Hình nền dải ngân hà */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
+        /* Header phong cách kính mờ vũ trụ */
         header {
-            background-color: var(--primary-color);
+            background: rgba(10, 10, 20, 0.5); /* Nền mờ xanh đen */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             color: white;
             width: 100%;
-            padding: 2.5rem 0;
+            padding: 3rem 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            font-size: 3rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
         }
 
+        /* Bố cục chứa các thẻ */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             width: 90%;
-            margin: 4rem auto;
+            margin: 5rem auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
             flex-grow: 1;
         }
 
+        /* Thẻ nội dung vũ trụ */
         .category-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem 1.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 3.5rem 2.5rem;
             text-align: center;
             text-decoration: none;
             color: var(--text-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-top: 5px solid var(--primary-color);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Viền mờ */
+            position: relative;
+            overflow: hidden;
         }
 
         .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-            border-top-color: var(--hover-color);
+            transform: var(--hover-transform);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(142, 68, 173, 0.5); /* Viền phát sáng tím khi hover */
+        }
+
+        /* Khối bao quanh icon để làm nổi bật (dùng gradient vũ trụ) */
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(142, 68, 173, 0.4);
+            transition: transform 0.4s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .category-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(0, 192, 192, 0.6); /* Đổi màu phát sáng xanh ngọc khi hover */
         }
 
         .category-card i {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .category-card:hover i {
-            color: var(--hover-color);
+            font-size: 3rem;
+            color: white;
+            margin: 0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
         }
 
         .category-card h2 {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             margin: 0;
             line-height: 1.5;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
 
+        /* Chân trang vũ trụ */
         footer {
             width: 100%;
-            background-color: #e8e4d9;
-            padding: 1.5rem 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
             text-align: center;
-            color: #666;
-            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hiệu ứng Responsive cho điện thoại */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+            .container {
+                gap: 2rem;
+                margin: 4rem auto;
+            }
+            .category-card {
+                padding: 2.5rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -109,24 +170,51 @@
     </header>
 
     <div class="container">
+        <!-- Card 1 -->
         <a href="https://lelevietnam99.github.io/PQQ-IDIOMS_COLLOCATIONS/" class="category-card" target="_blank">
-            <i class="fa-solid fa-book-open"></i>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-book-open-reader"></i>
+            </div>
             <h2>Đạo Lý Mỗi Ngày</h2>
         </a>
 
+        <!-- Card 2 -->
         <a href="https://lelevietnam99.github.io/A60-TONG_HOP_60_VI_A_LA_HAN/" class="category-card" target="_blank">
-            <i class="fa-solid fa-users"></i>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-users-rays"></i>
+            </div>
             <h2>Tiểu sử 60 vị A La Hán</h2>
         </a>
 
+        <!-- Card 3 -->
         <a href="https://lelevietnam99.github.io/saints_stories/" class="category-card" target="_blank">
-            <i class="fa-solid fa-mountain-sun"></i>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-mountain-sun"></i>
+            </div>
             <h2>Các câu chuyện Trích từ Đỉnh Núi Tuyết</h2>
+        </a>
+        <a href="https://lelevietnam99.github.io/KINH_CHANH_TINH_TAN/" class="category-card" target="_blank">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h2>KINH CHÁNH TINH TẤN</h2>
+        </a>
+        <a href="https://parenting-handbook.netlify.app/?lang=vi" class="category-card" target="_blank">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-tree"></i>
+            </div>
+            <h2>GIÚP TRẺ THÔNG MINH VÀ THÀNH NGƯỜI CÓ ÍCH CHO ĐỜI</h2>
+        </a>
+        <a href="https://lelevietnam99.github.io/TAM_RONG_RUOI/" class="category-card" target="_blank">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-spa"></i>
+            </div>
+            <h2>TÂM RONG RUỔI </h2>
         </a>
     </div>
 
     <footer>
-        <p>&copy; 2026 PQQ. Trang lưu trữ đạo lý.</p>
+        <p>&copy; 2026 PQQ. Trang lưu trữ đạo lý vũ trụ.</p>
     </footer>
 
 </body>
